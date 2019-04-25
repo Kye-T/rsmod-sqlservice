@@ -1,5 +1,6 @@
 # rsmod-sqlservice
 Integrate SQL into your game engine easily with an SQL Service.
+Currently at version 1.0.1
 
 # Introduction
 An SQL wrapper for RS MOD designed to get rid of flat file saves. Using a Database to save information allows for cross platform integration. Finally, you'll be able to display highscores and player data on your webapp or equivilent.
