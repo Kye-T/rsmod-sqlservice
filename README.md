@@ -26,12 +26,12 @@ services:
 
 There are many configurations you can alter based on your needs. Here are a list of configurations you can change when declaring the class:
 
-`driver` - Gradel Dependency for your Database, Default `com.mysql.jdbc.Driver`
-`port` - Port your Database is running on, Default `3306`
-`host` - The host your Database is running on, Default `127.0.0.1`
-`user` - The username of your Database user, Default `root`
-`password` - The password for your Database user, Default `NULL`
-`dbname` - The Database name you are using, Default `NULL`
+- `driver` - Gradel Dependency for your Database, Default `com.mysql.jdbc.Driver`
+- `port` - Port your Database is running on, Default `3306`
+- `host` - The host your Database is running on, Default `127.0.0.1`
+- `user` - The username of your Database user, Default `root`
+- `password` - The password for your Database user, Default `NULL`
+- `dbname` - The Database name you are using, Default `NULL`
 
 # Gradel Dependencies
 By default, the `build.gradle` contains all JBCD connectors. You can remove the ones that you do not need.
