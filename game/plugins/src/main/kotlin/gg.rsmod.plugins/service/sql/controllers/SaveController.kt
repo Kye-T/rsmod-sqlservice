@@ -310,7 +310,8 @@ class SaveController : Controller() {
                     it[VarpModel.varpId] == varp.id
                 }
 
-                if(dbVarp != null) {
+                // zeroed values should be just deleted
+                if(dbVarp != null && varp.state != 0) {
                     // Update
                     VarpModel.update({
                         VarpModel.id eq dbVarp[VarpModel.id]
@@ -321,11 +322,13 @@ class SaveController : Controller() {
                     // Remove from models so we can delete unused ones later
                     serialize.varpModels.remove(dbVarp)
                 } else {
-                    // Insert
-                    VarpModel.insert {
-                        it[this.playerId] = serialize.player[PlayerModel.id]
-                        it[this.varpId] = varp.id
-                        it[this.state] = varp.state
+                    // Insert only if state is not zeroed
+                    if(varp.state != 0) {
+                        VarpModel.insert {
+                            it[this.playerId] = serialize.player[PlayerModel.id]
+                            it[this.varpId] = varp.id
+                            it[this.state] = varp.state
+                        }
                     }
                 }
             }
